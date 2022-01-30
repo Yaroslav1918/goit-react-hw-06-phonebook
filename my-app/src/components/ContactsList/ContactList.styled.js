@@ -1,11 +1,10 @@
 import styled from "styled-components";
 export const ContactList = styled.ul``;
 export const ListItem = styled.li`
-  display: flex;
-  list-style: none;
+  list-style: inside;
   align-items: baseline;
 `;
-export const Paragraph = styled.p`
+export const Span = styled.span`
   font-size: 20px;
   margin-right: 10px;
   margin-left: 5px;

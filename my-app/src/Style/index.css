@@ -13,3 +13,7 @@ code {
 div {
   margin-left: 30px;
 }
+
+ul {
+  list-style: inside;
+}
