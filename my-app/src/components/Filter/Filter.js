@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getFilter } from "../../redux/reduxApi/PhoneBook-selectors";
+import { getFilter } from "../../redux/phoneBook/phoneBook-selectors";
 import { FilterMark, FilterInput, FilterSpan } from "./Filter.styled";
-import contactAction from "../../redux/reduxApi/contact-actions";
+import contactAction from "../../redux/phoneBook/contact-actions";
 
 const Filter = () => {
   const value = useSelector(getFilter);

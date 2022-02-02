@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import phoneBookActions from "../../redux/reduxApi/contact-actions";
+import { useDispatch, useSelector } from "react-redux";
+import { getContact } from "../../redux/phoneBook/phoneBook-selectors";
+import contactAction from "../../redux/phoneBook/contact-actions";
 import {
   ContactsForm,
   ContactsMark,
@@ -8,11 +9,14 @@ import {
   ContactsButton,
   ContactsSpan,
 } from "./ContactForm.styled";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const dispatch = useDispatch();
+  const items = useSelector(getContact);
 
   const onChangeInput = (e) => {
     const { name, value } = e.currentTarget;
@@ -27,11 +31,23 @@ export default function ContactForm() {
         return;
     }
   };
+  const onCheckNameValue = (contactName) => {
+    if (
+      items.some(
+        (contact) => contact.name.toLowerCase() === contactName.toLowerCase()
+      )
+    ) {
+      toast(`${name} is already in contacts`);
+      return;
+    }
+    dispatch(contactAction.addContact(name, number));
+  };
+
   const onSubmitForm = (e) => {
     e.preventDefault();
-    dispatch(phoneBookActions.addContact(name, number));
-    setName((name) => (name = ""));
-    setNumber((number) => (number = ""));
+    onCheckNameValue(e.target.name.value);
+    setName("");
+    setNumber("");
   };
 
   return (

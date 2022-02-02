@@ -10,8 +10,9 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+
 import storage from "redux-persist/lib/storage";
-import contactReducer from "./PhoneBook-reducer";
+import contactReducer from "./phoneBook/phoneBook-reducer";
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -25,6 +26,7 @@ const middleware = [
 const contactPersistConfig = {
   key: "contact",
   storage,
+  blacklist: ["filter"],
 };
 
 export const store = configureStore({

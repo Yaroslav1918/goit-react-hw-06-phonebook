@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import contactAction from "../../redux/reduxApi/contact-actions";
-import { getVisibleContact } from "../../redux/reduxApi/PhoneBook-selectors";
+import contactAction from "../../redux/phoneBook/contact-actions";
+import { getVisibleContact } from "../../redux/phoneBook/phoneBook-selectors";
 import {
   ContactList,
   ListItem,
