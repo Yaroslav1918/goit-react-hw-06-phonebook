@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getContact } from "../../redux/phoneBook/phoneBook-selectors";
-import contactAction from "../../redux/phoneBook/contact-actions";
+import phoneBookAction from "../../redux/phoneBook/phoneBook-actions";
 import {
   ContactsForm,
   ContactsMark,
@@ -40,7 +40,7 @@ export default function ContactForm() {
       toast(`${name} is already in contacts`);
       return;
     }
-    dispatch(contactAction.addContact(name, number));
+    dispatch(phoneBookAction.addContact(name, number));
   };
 
   const onSubmitForm = (e) => {

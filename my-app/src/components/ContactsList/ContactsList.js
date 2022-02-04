@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import contactAction from "../../redux/phoneBook/contact-actions";
+import phoneBookAction from "../../redux/phoneBook/phoneBook-actions";
 import { getVisibleContact } from "../../redux/phoneBook/phoneBook-selectors";
 import {
   ContactList,
@@ -14,7 +14,7 @@ const ContactsList = () => {
 
   const dispatch = useDispatch();
 
-  const onDeleteContact = (id) => dispatch(contactAction.deleteContact(id));
+  const onDeleteContact = (id) => dispatch(phoneBookAction.deleteContact(id));
 
   return (
     <ContactList>

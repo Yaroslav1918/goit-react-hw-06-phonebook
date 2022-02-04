@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getFilter } from "../../redux/phoneBook/phoneBook-selectors";
 import { FilterMark, FilterInput, FilterSpan } from "./Filter.styled";
-import contactAction from "../../redux/phoneBook/contact-actions";
+import phoneBookAction from "../../redux/phoneBook/phoneBook-actions";
 
 const Filter = () => {
   const value = useSelector(getFilter);
@@ -15,7 +15,7 @@ const Filter = () => {
         type="text"
         name="filter"
         value={value}
-        onChange={(e) => dispatch(contactAction.changeFilter(e.target.value))}
+        onChange={(e) => dispatch(phoneBookAction.changeFilter(e.target.value))}
       />
     </FilterMark>
   );

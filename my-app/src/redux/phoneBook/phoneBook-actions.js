@@ -13,5 +13,5 @@ const deleteContact = createAction("contact/delete");
 
 const changeFilter = createAction("contact/changeFilter");
 
-const contactAction = { addContact, deleteContact, changeFilter };
-export default contactAction;
+const phoneBookAction = { addContact, deleteContact, changeFilter };
+export default phoneBookAction;

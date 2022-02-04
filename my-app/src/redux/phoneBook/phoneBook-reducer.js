@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { createReducer } from "@reduxjs/toolkit";
-import actions from "./contact-actions";
+import actions from "./phoneBook-actions";
 
 const items = createReducer([], {
   [actions.addContact]: (state, { payload }) => {
